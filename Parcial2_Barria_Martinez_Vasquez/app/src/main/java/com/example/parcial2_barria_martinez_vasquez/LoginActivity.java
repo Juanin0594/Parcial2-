@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText Ced,Pass;
@@ -21,6 +24,15 @@ public class LoginActivity extends AppCompatActivity {
 
         this.InicializaUsuario();
         this.InicializarControles();
+        this.InicializarMaterias();
+
+
+    }
+
+    public void InicializarMaterias(){
+
+        OutputStreamWriter escribir = new OutputStreamWriter(openFileOutput("arcMaterias.txt"MODE_PRIVATE));
+        escribir.write();
 
 
     }
@@ -30,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
 
     public void InicializaUsuario(){
 
